@@ -34,14 +34,14 @@ static long dist2(Point a, Point b)
     assert(abs(a.y) <= 10000);
     assert(abs(b.x) <= 10000);
     assert(abs(b.y) <= 10000);
-    long result = (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
+    long result = static_cast<long>(a.x - b.x) * (a.x - b.x) + static_cast<long>(a.y - b.y) * (a.y - b.y);
     return result;
 }
 
 static long combinations(int n)
 {
     assert(n >= 0);
-    return n * (n - 1) / 2;
+    return static_cast<long>(n) * (n - 1) / 2;
 }
 
 int main()
